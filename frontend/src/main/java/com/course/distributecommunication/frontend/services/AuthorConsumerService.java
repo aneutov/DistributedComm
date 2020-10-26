@@ -1,11 +1,10 @@
 package com.course.distributecommunication.frontend.services;
-
 import com.course.distributecommunication.frontend.models.Author;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
@@ -20,11 +19,6 @@ public class AuthorConsumerService {
   RestTemplate restTemplate;
   @Value("${api.externalservices.authors.url}")
   private String apiUrlRoot;
-
-  @Autowired
-  public AuthorConsumerService(RestTemplateBuilder restTemplateBuilder) {
-    restTemplate = restTemplateBuilder.build();
-  }
 
   public Collection<Author> fetch() {
     try {
