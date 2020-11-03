@@ -1,0 +1,16 @@
+syntax="proto3";
+option java_multiple_files = true;
+package com.course.distributecommunication.authors.grpc;
+
+message GetAuthorsRequest {
+}
+
+message GetAuthorResponse {
+  int32 id = 1;
+  string firstName = 2;
+  string lastName  = 3;
+}
+
+service AuthorService {
+  rpc getAuthors(GetAuthorsRequest) returns (stream GetAuthorResponse);
+}

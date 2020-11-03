@@ -1,0 +1,17 @@
+syntax="proto3";
+option java_multiple_files = true;
+package com.course.distributecommunication.books.grpc;
+
+message GetBooksRequest {
+}
+
+message GetBookResponse {
+  int32 id = 1;
+  string title = 2;
+  int32 pages = 3;
+  int32 authorId = 4;
+}
+
+service BookService {
+  rpc getBooks(GetBooksRequest) returns (stream GetBookResponse);
+}
