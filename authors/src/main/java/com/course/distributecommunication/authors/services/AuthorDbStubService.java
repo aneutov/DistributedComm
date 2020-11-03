@@ -1,17 +1,18 @@
 package com.course.distributecommunication.authors.services;
 
+import com.course.distributecommunication.authors.models.Author;
+
+import org.springframework.stereotype.Component;
+
 import java.util.Collection;
 import java.util.HashMap;
 
-import com.course.distributecommunication.authors.models.Author;
-import org.springframework.stereotype.Component;
-
 @Component
-public class AuthorService
+public class AuthorDbStubService
 {
     private final HashMap<Integer, Author> authors;
 
-    public AuthorService() {
+    public AuthorDbStubService() {
         this.authors = new HashMap<>();
         this.authors.put(1, new Author(1).withFirstName("Loreth Anne").withLastName("White - v2"));
         this.authors.put(2, new Author(2).withFirstName("Lisa").withLastName("Regan - v2"));

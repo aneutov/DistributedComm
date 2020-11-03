@@ -1,17 +1,18 @@
 package com.course.distributecommunication.books.services;
 
+import com.course.distributecommunication.books.models.Book;
+
+import org.springframework.stereotype.Component;
+
 import java.util.Collection;
 import java.util.HashMap;
 
-import com.course.distributecommunication.books.models.Book;
-import org.springframework.stereotype.Component;
-
 @Component
-public class BookService
+public class BookDbStubService
 {
     private final HashMap<Integer, Book> books;
 
-    public BookService() {
+    public BookDbStubService() {
         books = new HashMap<Integer, Book>();
         books.put(1, new Book(1).withTitle("Semiosis: A Novel - v2").withPages(326).withAuthorId(1));
         books.put(2, new Book(2).withTitle("The Loosening Skin - v2").withPages(132).withAuthorId(1));

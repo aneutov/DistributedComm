@@ -1,14 +1,24 @@
 package com.course.distributecommunication.books;
 
+import com.course.distributecommunication.books.grpc.BookServiceImpl;
+
+import io.grpc.Server;
+import io.grpc.ServerBuilder;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication
-public class Application
-{
+import java.io.IOException;
 
-    public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
-    }
+@SpringBootApplication
+public class Application {
+
+  public static void main(String[] args) throws InterruptedException, IOException {
+    SpringApplication.run(Application.class, args);
+    Server server = ServerBuilder.forPort(9090).addService(new BookServiceImpl()).build();
+
+    server.start();
+    server.awaitTermination();
+  }
 
 }
