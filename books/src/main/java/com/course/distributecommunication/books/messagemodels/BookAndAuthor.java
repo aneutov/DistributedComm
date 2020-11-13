@@ -1,7 +1,5 @@
-package com.course.distributecommunication.books.models;
+package com.course.distributecommunication.books.messagemodels;
 
-
-import java.io.Serializable;
 
 public class BookAndAuthor {
   private int id;

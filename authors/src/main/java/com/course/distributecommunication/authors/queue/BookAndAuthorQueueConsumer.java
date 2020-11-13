@@ -1,7 +1,7 @@
 package com.course.distributecommunication.authors.queue;
 
 import com.course.distributecommunication.authors.models.Author;
-import com.course.distributecommunication.authors.models.BookAndAuthor;
+import com.course.distributecommunication.authors.messagemodels.BookAndAuthor;
 import com.course.distributecommunication.authors.services.AuthorService;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -11,10 +11,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class QueueConsumer {
-  @Autowired private AuthorService authorService;
+public class BookAndAuthorQueueConsumer {
+  @Autowired
+  private AuthorService authorService;
 
-  @RabbitListener(queues = "messageQueue")
+  @RabbitListener(queues = "bookAndAuthorMessageQueue")
   public void receive(String bookAndAuthorString) {
     try {
       BookAndAuthor bookAndAuthor = new ObjectMapper().readValue(bookAndAuthorString, BookAndAuthor.class);

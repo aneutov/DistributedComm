@@ -4,7 +4,6 @@ import java.util.Collection;
 import java.util.HashMap;
 
 import com.course.distributecommunication.books.models.Book;
-import com.course.distributecommunication.books.models.BookAndAuthor;
 import org.springframework.stereotype.Component;
 
 @Component

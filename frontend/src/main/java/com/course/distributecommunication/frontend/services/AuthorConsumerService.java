@@ -1,5 +1,5 @@
 package com.course.distributecommunication.frontend.services;
-import com.course.distributecommunication.frontend.models.Author;
+import com.course.distributecommunication.frontend.dtos.AuthorDto;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,9 +20,9 @@ public class AuthorConsumerService {
   @Value("${api.externalservices.authors.url}")
   private String apiUrlRoot;
 
-  public Collection<Author> fetch() {
+  public Collection<AuthorDto> fetch() {
     try {
-      ResponseEntity<Author[]> entity = restTemplate.getForEntity(apiUrlRoot + "/authors", Author[].class);
+      ResponseEntity<AuthorDto[]> entity = restTemplate.getForEntity(apiUrlRoot + "/authors", AuthorDto[].class);
       return Arrays.asList(entity.getBody());
     } catch (Exception ex){
       return null;

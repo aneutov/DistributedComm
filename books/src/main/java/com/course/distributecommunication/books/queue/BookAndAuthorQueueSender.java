@@ -1,16 +1,15 @@
 package com.course.distributecommunication.books.queue;
 
-import com.course.distributecommunication.books.models.BookAndAuthor;
+import com.course.distributecommunication.books.messagemodels.BookAndAuthor;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import org.springframework.amqp.core.Queue;
 
 @Component
-public class QueueSender {
+public class BookAndAuthorQueueSender {
   @Autowired private RabbitTemplate rabbitTemplate;
   @Autowired private Queue queue;
 
