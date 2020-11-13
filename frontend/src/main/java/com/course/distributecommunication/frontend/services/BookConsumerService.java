@@ -1,5 +1,5 @@
 package com.course.distributecommunication.frontend.services;
-import com.course.distributecommunication.frontend.models.Book;
+import com.course.distributecommunication.frontend.dtos.BookDto;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,9 +20,9 @@ public class BookConsumerService {
   @Value("${api.externalservices.books.url}")
   private String apiUrlRoot;
 
-  public Collection<Book> fetch() {
+  public Collection<BookDto> fetch() {
     try {
-      ResponseEntity<Book[]> entity = restTemplate.getForEntity(apiUrlRoot + "/books", Book[].class);
+      ResponseEntity<BookDto[]> entity = restTemplate.getForEntity(apiUrlRoot + "/books", BookDto[].class);
       return Arrays.asList(entity.getBody());
     } catch (Exception ex){
       return null;

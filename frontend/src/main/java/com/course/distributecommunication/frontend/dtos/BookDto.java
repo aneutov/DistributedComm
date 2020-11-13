@@ -1,6 +1,6 @@
-package com.course.distributecommunication.frontend.models;
+package com.course.distributecommunication.frontend.dtos;
 
-public class Book
+public class BookDto
 {
     private int id;
     private String title;

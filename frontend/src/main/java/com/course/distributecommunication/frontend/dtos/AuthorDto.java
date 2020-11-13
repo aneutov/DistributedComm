@@ -1,9 +1,9 @@
-package com.course.distributecommunication.frontend.models;
+package com.course.distributecommunication.frontend.dtos;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Author {
+public class AuthorDto {
   private int id;
   private String firstName;
   private String lastName;
